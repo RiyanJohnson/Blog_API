@@ -6,4 +6,5 @@ urlpatterns=[
     path('create/',create_post, name = 'create_post'),
     path('posts/<int:pk>',post_detail,name = 'post_detail'),
     path('posts/<int:pk>/delete',delete_post,name = 'delete-post'),
+    path('posts/<int:post_id>/comment',add_comment,name = 'delete-post'),
 ]

@@ -51,3 +51,16 @@ def delete_post(request,pk):
     post.delete()
     return Response(status = status.HTTP_204_NO_CONTENT)
         
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def add_comment(request, post_id):
+    try:
+        post = Post.objects.get(id=post_id)
+    except Post.DoesNotExist:
+        return Response({"error": "Post not found"}, status=status.HTTP_404_NOT_FOUND)
+    
+    serializer = CommentSerializer(data=request.data, context={"request": request, "post": post})
+    serializer.is_valid(raise_exception=True)
+    serializer.save(author=request.user, post=post)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
