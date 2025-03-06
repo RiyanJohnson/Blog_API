@@ -25,9 +25,9 @@ Welcome to the Blog App API documentation. This RESTful API allows users to regi
 
 All API endpoints are prefixed with the base URL:
 
-'
+'''
 http://127.0.0.1:8000/
-'
+'''
 
 ## Authentication
 
@@ -35,9 +35,9 @@ This API uses token-based authentication. After logging in, users receive a toke
 
 **Header Format:**
 
-'
+'''
 Authorization: Token <your_token>
-'
+'''
 
 ## Endpoints
 
@@ -187,9 +187,9 @@ Authorization: Token <your_token>
 
 The admin interface is accessible at:
 
-'
+'''
 http://127.0.0.1:8000/admin/
-'
+'''
 
 Authorized staff members can manage users, posts, and comments through this interface.
 
