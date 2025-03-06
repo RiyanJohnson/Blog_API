@@ -2,6 +2,7 @@
 
 ### Create a python environment and activate
 ```python -m venv env```
+
 ```env\Scripts\activate```
 
 ### Clone the repository to the direcrory of the env
