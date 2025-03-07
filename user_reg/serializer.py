@@ -2,16 +2,6 @@ from rest_framework import serializers
 from .models import Profile
 from django.contrib.auth.models import User
 
-'''class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id','username','email']'''
-
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = '__all__'
-
 class RegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only = True)
 
@@ -26,11 +16,3 @@ class RegistrationSerializer(serializers.ModelSerializer):
             password= validated_data['password'],
         )
         return user
-
-class LoginSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['username','password']
-
-
-    
